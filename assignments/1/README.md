@@ -2,6 +2,10 @@
 
 ## Q1
 
+They could be from the same process, have similar charactersitics(?)
+
+The process do not seem to have a zero mean.
+
 ## Q2
 
 None of them seems to have it since 0 is not within the confidence interval.
@@ -26,8 +30,39 @@ The relation between correlation (rho) and covariance (C) is:
 rho[X,Y] = C[X,Y] / sqrt(V[X]*V[Y])
 ```
 
+## Q5 
 
+Correlation between points separated with k (= 1,2,3).
 
+## Q6 
+
+```
+t=n/fs;
+
+t = time vector
+n = samples [0,1,2,...,N]
+fs = sample frequency
+```
+
+## Q7
+
+I guess?
+
+## Q8
+
+The peaks from the periodogram correlates to f1 resp. f2.
+
+The relation to the covar func: 
+
+## Q9
+
+We have random generated amplitude `A1` and `A2`.
+
+## Q10
+
+Log scales shows other freqs as well, not only the strongest ones.
+
+## Q11
 
 ## Q12 
 

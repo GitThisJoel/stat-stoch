@@ -4,22 +4,18 @@ clear
 addpath("all_files") 
 load data2
 
-plot_xcov = 1
+subplot(1,3,1);
+[r, lags] = xcov(y, 20, 'biased');
+plot(lags, r);
 
-if plot_xcov
-    [r, lags] = xcov(y, 20, 'biased');
-    figure();
-    plot(lags, r);
-
-    [rho, lags] = xcov(y, 20, 'coeff');
-    figure();
-    plot(lags, rho);
-end 
+subplot(1,3,2);
+[rho, lags] = xcov(y, 20, 'coeff');
+plot(lags, rho);
 
 % Q4
 
-k=3;
-figure();
+k=2;
+subplot(1,3,3);
 plot(y(1:end-k), y(k+1:end), '.');
 
 
