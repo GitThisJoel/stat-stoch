@@ -9,6 +9,12 @@ m1 = mean(data1);
 m2 = mean(data2); 
 m3 = mean(data3);
 
+m = mean([m1 m2 m3]);
+
+m1n = mean(data1) - m;
+m2n = mean(data2) - m;
+m3n = mean(data3) - m;
+
 ci1 = conf_int(data1);
 ci2 = conf_int(data2);
 ci3 = conf_int(data3);
