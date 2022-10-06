@@ -37,5 +37,5 @@ legend("Periodogram","AR-model");
 
 % Q11
 % freqs present in the sound file? 
-% i guess?
+% i guess not?
 
