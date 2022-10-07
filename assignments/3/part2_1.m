@@ -1,33 +1,27 @@
-e = randn(500,1);
+clear
+close all 
 
-A=[1 -2.39 3.35 -2.34 0.96];
-C=[1 0 1];
-x = filter(C, A, e);
+addpath("all_files");
+load("sunspotdata")
 
-fs = 100; 
-NFFT = 4096;
+subplot(121)
+data = dataold - mean(dataold);
+X=fft(data);
+N=length(data);
+Rhat=(X.*conj(X))/N;
+f=[0:N-1]; %/N;
+plot(f,Rhat)
+title("old")
 
-n = 10; 
-L = round(length(e)/(n+1));
+subplot(122)
+data = datanew - mean(datanew);
+X=fft(data);
+N=length(data);
+Rhat=(X.*conj(X))/N;
+f=[0:N-1]/N;
+plot(f,Rhat)
+title("new")
 
-subplot(221);
-NFFT = 4096;
-periodogram(x,[],NFFT,fs);
+% Q5: they are the same
 
-subplot(222);
-periodogram(x,hanning(500),NFFT,fs);
-
-subplot(223);
-pwelch(x,hanning(L),round(L/2),NFFT,fs);
-
-sum = 0;
-iters = 1
-for i=1:iters
-    e = randn(500,1);
-    Rhate=periodogram(e,[],NFFT);
-    Rhatew=pwelch(e,hanning(L),round(L/2),NFFT);
-    sum = sum + var(Rhate)/var(Rhatew);
-end 
-% sum / iters
-% estimate: 23.1789
-
+% Q7:
