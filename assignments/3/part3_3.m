@@ -37,3 +37,5 @@ disp("const coeff " + P(2));
 
 figure();
 plot(distances, cohers, '.')
+
+R = corrcoef(cohers, distances)
